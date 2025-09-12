@@ -49,11 +49,9 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-16 sm:h-14">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="flex items-center justify-center">
-              <img src="/assets/logo format_1757705341787.jpg" alt="Suryas Solar" className="h-8 w-auto" />
-            </div>
-            <span className={`text-xl font-bold ${logoColor} hidden sm:block`}>Suryas Solar</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <img src="/assets/suryas-logo.jpg" alt="Suryas Solar" className="h-10 w-10 object-cover rounded-full border-2 border-white shadow-md" />
+            <span className="text-xl font-bold text-[#C1509C] hidden sm:block" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>Suryas Solar</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -65,7 +63,7 @@ const Navbar = () => {
                   location.pathname === item.path
                     ? 'text-[#F39C12]'
                     : isScrolled
-                    ? 'text-[#1B2631] hover:text-[#27AE60]'
+                    ? 'text-[#1B2631] hover:text-[#C1509C]'
                     : 'text-[#F8F9F9] hover:text-[#F39C12]'
                 }`}
               >
@@ -111,7 +109,7 @@ const Navbar = () => {
                 className={`block py-2 px-4 rounded-md font-medium transition-colors ${
                   location.pathname === item.path
                     ? 'text-[#F39C12] bg-[#F39C12]/10'
-                    : 'text-[#1B2631] hover:text-[#27AE60] hover:bg-[#27AE60]/10'
+                    : 'text-[#1B2631] hover:text-[#C1509C] hover:bg-[#27AE60]/10'
                 }`}
               >
                 {item.name}
