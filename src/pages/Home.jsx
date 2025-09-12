@@ -26,7 +26,7 @@ const Home = () => {
     { icon: Zap, title: "Reduce Energy Bills", description: "Save up to 90% on electricity costs" },
     { icon: Shield, title: "25-Year Warranty", description: "Long-term protection and peace of mind" },
     { icon: Users, title: "Expert Installation", description: "Certified professionals with 10+ years experience" },
-    { icon: Award, title: "Government Subsidies", description: (<>We assist with PM Surya Ghar subsidy claims. Eligible customers can receive government subsidy up to <strong style={{color:'#27AE60'}}>₹78,000</strong>. We handle eligibility checks, documentation and submission for a hassle-free claim.</>) }
+    { icon: Award, title: "Government Subsidies", description: (<>Upto <strong style={{color:'#27AE60'}}>₹78,000</strong> subsidy under PM surya Ghar.</>) }
   ];
 
   const testimonials = [
