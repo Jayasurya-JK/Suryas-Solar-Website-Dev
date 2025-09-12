@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, Sun, Phone } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -50,10 +50,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-16 sm:h-14">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-[#F39C12] rounded-lg flex items-center justify-center">
-              <Sun className="w-6 h-6 text-[#1B2631]" />
+            <div className="flex items-center justify-center">
+              <img src="/assets/logo format_1757705341787.jpg" alt="Suryas Solar" className="h-8 w-auto" />
             </div>
-            <span className={`text-xl font-bold ${logoColor}`}>Suryas Solar</span>
+            <span className={`text-xl font-bold ${logoColor} hidden sm:block`}>Suryas Solar</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">

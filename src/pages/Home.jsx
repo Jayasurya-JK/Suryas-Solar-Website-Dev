@@ -57,7 +57,7 @@ const Home = () => {
         <meta name="description" content="Transform your home with sustainable solar energy. Expert rooftop solar installation, maintenance, and consultation services across India. Get your free quote today!" />
       </Helmet>
 
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1B2631]">
+      <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1B2631]">
         <div className="absolute inset-0 solar-pattern opacity-5"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-[#F8F9F9]">
@@ -67,7 +67,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <h1 className="hero-title text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
               Power Your Future with
               <span className="block text-[#F39C12]">Clean Solar Energy</span>
             </h1>
