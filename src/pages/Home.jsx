@@ -68,12 +68,12 @@ const Home = () => {
             className="space-y-8"
           >
             <h1 className="hero-title text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              Power Your Future with
+              Power Your House with
               <span className="block text-[#F39C12]">Clean Solar Energy</span>
             </h1>
             
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300">
-              India's trusted solar installation partner. Reduce your electricity bills by up to 90% 
+              Tamilnadu's trusted solar installation partner. Reduce your electricity bills by up to 90% 
               with our premium rooftop solar solutions.
             </p>
 
