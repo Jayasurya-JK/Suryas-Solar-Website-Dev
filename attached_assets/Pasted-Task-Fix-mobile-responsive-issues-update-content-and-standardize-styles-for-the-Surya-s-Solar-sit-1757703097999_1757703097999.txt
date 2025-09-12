@@ -1,0 +1,77 @@
+Task: Fix mobile responsive issues, update content, and standardize styles for the Surya's Solar site. Do everything in this one pass, edit the project files directly, test in the dev preview, commit changes, and report back with files changed and a short diff/summary.
+
+Requirements (apply all):
+
+1. Search the repo for the hero/stats section and the 4-step/process cards. Files to check first: src/components/HeroImage.jsx (or Hero.jsx), WelcomeMessage.jsx, Stats.jsx, Steps.jsx, index.css, src/index.css, global stylesheet, or any components folder. If names differ, search for markup with "500+" / "Happy Customers" / "Simple 4-Step Process" to find them.
+
+2. GLOBAL PALETTE (ensure variables exist)
+- Create/update CSS variables in the main CSS file (e.g., :root or :root in src/index.css):
+  --color-primary: #F39C12;
+  --color-secondary: #27AE60;
+  --color-accent: #3498DB;
+  --color-dark: #1B2631;
+  --color-light: #F8F9F9;
+- Use these variables for buttons, cards, headers, badges, and hover states.
+- Make CTAs (#Get Free Quote) use --color-primary with hover => --color-secondary.
+
+3. HERO & STATS fixes
+- Fix the hero overlay that hides the bottom stats: reduce overlay height and/or set pointer-events:none; ensure hero overlay z-index is below the stats.
+- Ensure the stats row is `position: relative; z-index: 3;` so it appears above overlay.
+- Replace the stats content:
+  - **100 kW+** (text: "Installations")
+  - **10+** (text: "Years Experience")
+  - **25** (text: "Year Warranty")
+- Ensure stats numbers use `.stats-number` with responsive sizing (e.g., `font-size: clamp(20px, 4vw, 36px)`) and color `--color-primary`.
+- Confirm the "25" value no longer disappears in mobile preview.
+
+4. 4-step/process card updates (visual + content)
+- Replace/overwrite the existing 4-step component so:
+  - Desktop: 4 columns in one row (if currently implemented).
+  - Tablet & Mobile: grid with 2 columns × 2 rows (exact 2x2 on mobile).
+  - Each card: background `--color-light`, border-radius 14px, consistent min-height for equal sizing, centered content, subtle shadow.
+  - Top badge: circular badge 60–72px with gradient `linear-gradient(135deg, var(--color-secondary), var(--color-accent))` and white number inside.
+  - Titles: color `--color-dark` and bold. Descriptions: neutral gray `#4B5A60`.
+- Use CSS Grid (not floats) and ensure each grid child stretches to the same height.
+- Tighten mobile spacing so two cards per row look balanced (adjust padding, badge size, font-size).
+
+5. Government subsidy card content
+- Replace the subsidy card copy with brochure text: short card copy stating:
+  "We assist with PM Surya Ghar subsidy claims. Eligible customers can receive government subsidy up to ₹78,000. We handle eligibility checks, documentation and submission for a hassle-free claim."
+- Emphasize the amount with bold/green: `<strong>₹78,000</strong>` and use `--color-secondary` for the amount color.
+- Cite that the brochure file in the repo (or /mnt/data) is the source for wording.
+
+6. Steps/process textual changes
+- Update the 4-step headings/text to the brochure's Project Journey (or use these exact four steps if brochure text not found):
+  01 Site Feasibility — "We assess roof condition, orientation and energy needs."
+  02 Approvals & Registration — "MNRE/TNEB registration and e-token processing for subsidy eligibility."
+  03 Delivery & Installation — "Material delivery and professional installation (3–5 days)."
+  04 Commissioning & Subsidy — "We submit commissioning documents and apply for subsidy; funds (up to ₹78,000) are released to your bank account."
+- Ensure these are accessible (use semantic tags, aria-labelledby where applicable).
+
+7. Styling details to enforce
+- Add CSS overrides (in main CSS) to guarantee mobile 2×2 layout: `@media (max-width: 992px) { .steps-grid { grid-template-columns: repeat(2,1fr); } }`
+- Make cards equal height using `display:flex; flex-direction:column;` and `justify-content: flex-start;`
+- Reduce hero overlay height so counters aren’t cropped (or move counters above overlay). Ensure the change does not break desktop layout.
+
+8. Testing
+- Run `npm install` (if needed) and `npm run dev` in the environment. Use the preview to test:
+  - Desktop: Hero shows 4 counters clearly; 4-step component (or current layout) looks fine.
+  - Mobile (narrow width): Hero's 25-year warranty visible; steps render as 2×2 with balanced sizing; stats show "100 kW+ Installations".
+- If any Vite host errors appear, ensure `vite.config.js` has `server.allowedHosts` set to allow Replit preview (e.g., `['.replit.dev']`) OR set `server.host = true; allowedHosts: 'all'` for dev only.
+
+9. Commit & report
+- Commit changes in one logical commit: `git add . && git commit -m "Fix mobile responsiveness; update stats, subsidy copy, and steps; apply Modern Solar palette variables"`
+- Push to the repo.
+- Return a concise report showing:
+  - Files changed (list)
+  - Short diff or key snippets changed (the new CSS variables, the new stats content, the new steps snippet, and the subsidy copy)
+  - Confirmation that dev preview was tested and screenshots (or URLs) if available
+  - Any remaining issues to be addressed
+
+Extra constraints:
+- Do not remove existing functionality or scripts.
+- Keep changes minimal and well-scoped.
+- Ensure textual currency symbol is `₹` and use the exact amount `₹78,000`.
+- Make the CSS changes resilient (use variables) so future theme changes are easy.
+
+Do the edits now, test mobile preview, commit and push, and then paste the change summary and diffs here.

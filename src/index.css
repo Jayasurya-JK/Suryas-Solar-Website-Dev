@@ -130,3 +130,43 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.8; }
 }
+/* Government subsidies highlight */
+.subsidy-amount {
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+/* Process timeline styling */
+.process-timeline {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
+    z-index: 1;
+  }
+}
+
+/* Mobile responsive fixes for hero overlay */
+.hero-overlay {
+  height: 8rem;
+}
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    height: 4rem !important;
+  }
+  
+  /* Ensure hero stats are above overlay on mobile */
+  .hero-stats {
+    position: relative;
+    z-index: 10;
+  }
+}

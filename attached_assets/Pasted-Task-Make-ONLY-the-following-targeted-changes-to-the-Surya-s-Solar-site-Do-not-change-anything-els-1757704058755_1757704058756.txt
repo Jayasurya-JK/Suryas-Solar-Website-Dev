@@ -1,0 +1,59 @@
+Task: Make ONLY the following targeted changes to the Surya's Solar site. Do not change anything else.
+
+1) HEADER / MOBILE MENU (overlap fix)
+- Problem: The top navigation/menu overlaps the hero content on small screens.
+- Fix: On mobile breakpoints (< 768px) make header compact and always on top:
+  - Ensure header uses `position: sticky; top: 0; z-index: 10000;` (or equivalent) so it stays above content and never visually overlaps hero text.
+  - Reduce header height on mobile to ~56px and ensure logo + hamburger vertically centered.
+  - Add `body { padding-top: 56px; }` or adjust the hero container margin-top so hero content starts below header on mobile only.
+- Only modify header CSS rules and any mobile-specific layout code that controls header height/positioning.
+
+2) HERO OVERLAY + 25-YEAR STAT (fading-out fix)
+- Problem: The bottom gradient/overlay hides the third stat ("25 Year Warranty") on mobile.
+- Fix:
+  - Locate the hero overlay (likely `.hero::after`, `.hero-overlay`, or similar). Reduce its vertical height on small screens (use media query) so it no longer covers the stat row.
+  - Add `pointer-events: none;` and ensure overlay has `z-index: 1`.
+  - Ensure the stats container (e.g., `.stats-row`, `.hero-stats`, `.counters`) uses `position: relative; z-index: 3;` so stats render above the overlay.
+- Do the changes only in the CSS where overlay and stats are defined.
+
+3) STATS TEXT CHANGE
+- Replace the stats text exactly as follows (find where "500+ Happy Customers" appears and replace):
+  - `100 kW+` — label: `Installations`
+  - `10+` — label: `Years Experience`
+  - `25` — label: `Year Warranty`
+- Keep the visual style (font-weight/color) same as existing stats; only change numbers/labels text.
+
+4) "WHY CHOOSE SOLAR ENERGY?" SECTION — MOBILE CARD SIZING + GOVT SUBSIDY COPY
+- Layout & sizing:
+  - Ensure the 4 cards under "Why Choose Solar Energy?" are a **2×2 grid on tablet & mobile**. Use CSS Grid with `grid-template-columns: repeat(2, 1fr)` at `max-width: 992px`.
+  - Make the cards visually consistent: each card should have the same width and height, equal padding, and centered content. Use `display:flex; flex-direction:column; align-items:center; justify-content:flex-start; min-height: 160px` (adjust slightly for small phones).
+  - Reduce vertical padding inside cards on mobile so the 2×2 grid looks balanced (no extra tall cards).
+- Government subsidy card copy:
+  - Replace the current last card's description with this exact text:
+    ```
+    Government Subsidies
+    We assist with PM Surya Ghar subsidy claims. Eligible customers can receive government subsidy up to <strong style="color:var(--color-secondary)">₹78,000</strong>. We handle eligibility checks, documentation and submission for a hassle-free claim.
+    ```
+  - Keep the card title short: `Government Subsidies`.
+  - Highlight the amount `₹78,000` in green (`--color-secondary` or `#27AE60`) and bold.
+- Only edit the markup/text of the four cards and related CSS for mobile sizing.
+
+5) SIMPLE 4-STEP PROCESS — content + redesign guidance (use brochure)
+- Replace the existing step texts with the brochure steps (exact headings + short descriptions). Use these 4 steps and exact copy:
+  01 **Site Feasibility** — "We assess roof condition, orientation and energy needs to design the right system."
+  02 **Approvals & Registration** — "MNRE/TNEB registration and e-token processing for subsidy eligibility."
+  03 **Delivery & Installation** — "Material delivery and professional installation — typically completed within 3–5 days."
+  04 **Commissioning & Subsidy** — "We submit commissioning documents and apply for subsidy; funds (up to ₹78,000) are released to your bank account."
+- Redesign look to match attached timeline screenshot:
+  - Desktop: transform the 4-step area to a visually connected timeline style (icons above small circles connected by a thin blue line that curves across — approximate using CSS: horizontal flex for desktop with decorative connector line or pseudo-elements).
+  - Mobile: stack steps vertically but keep the number badges (circular gradient) and ensure spacing/padding produce comfortable reading. If full curved svg timeline is heavy, implement a simple horizontal line + circle icons for desktop which visually resembles the provided screenshot.
+- Use existing classes where possible; add small CSS only for timeline style and responsiveness. Do not change other sections.
+
+6) Constraints (very important)
+- **Only edit files necessary** to implement these 5 fixes (header CSS/markup, hero overlay CSS, stats text file/component, Why Choose card component + CSS, Steps component + CSS).
+- **Do not introduce new dependencies** or change build scripts.
+- Keep all other content, layout, and functionality unchanged.
+- Use existing CSS variables for colors (prefer `--color-primary`, `--color-secondary`, etc.) if present; if not, use `#F39C12` for primary button color and `#27AE60` for the subsidy amount color.
+- Use `₹78,000` exact currency formatting (with comma) where specified.
+
+End: After making only the above edits, show me the exact code snippets you changed (the CSS rules and the small HTML/JSX text blocks you updated). Do not perform any other edits.

@@ -26,7 +26,7 @@ const Home = () => {
     { icon: Zap, title: "Reduce Energy Bills", description: "Save up to 90% on electricity costs" },
     { icon: Shield, title: "25-Year Warranty", description: "Long-term protection and peace of mind" },
     { icon: Users, title: "Expert Installation", description: "Certified professionals with 10+ years experience" },
-    { icon: Award, title: "Government Subsidies", description: "We help you claim available incentives" }
+    { icon: Award, title: "Government Subsidies", description: (<>We assist with PM Surya Ghar subsidy claims. Eligible customers can receive government subsidy up to <strong style={{color:'#27AE60'}}>₹78,000</strong>. We handle eligibility checks, documentation and submission for a hassle-free claim.</>) }
   ];
 
   const testimonials = [
@@ -87,10 +87,10 @@ const Home = () => {
               </Button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left">
+            <div className="hero-stats grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left relative z-10">
               <div className="text-center p-4">
-                <div className="text-4xl font-bold text-[#F39C12]">500+</div>
-                <div className="text-gray-300 mt-2">Happy Customers</div>
+                <div className="text-4xl font-bold text-[#F39C12]">100 kW+</div>
+                <div className="text-gray-300 mt-2">Installations</div>
               </div>
               <div className="text-center p-4">
                 <div className="text-4xl font-bold text-[#F39C12]">10+</div>
@@ -104,7 +104,7 @@ const Home = () => {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F8F9F9] to-transparent"></div>
+        <div className="hero-overlay absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#F8F9F9] to-transparent pointer-events-none"></div>
       </section>
 
       <section className="section-padding bg-[#F8F9F9]">
@@ -124,20 +124,20 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-xl shadow-md hover-lift text-center"
+                className="bg-white p-4 md:p-6 rounded-xl shadow-md hover-lift text-center flex flex-col items-center justify-start min-h-[160px]"
               >
                 <div className="w-16 h-16 bg-[#27AE60] rounded-full flex items-center justify-center mx-auto mb-4">
                   <benefit.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#1B2631] mb-2">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <p className="text-gray-600">{typeof benefit.description === 'string' ? benefit.description : benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -160,10 +160,10 @@ const Home = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { step: "01", title: "Free Consultation", description: "We assess your energy needs and roof space." },
-              { step: "02", title: "Custom Design", description: "Tailored solar system for maximum efficiency." },
-              { step: "03", title: "Expert Installation", description: "By our certified technicians." },
-              { step: "04", title: "Ongoing Support", description: "24/7 monitoring and maintenance." }
+              { step: "01", title: "Site Feasibility", description: "We assess roof condition, orientation and energy needs to design the right system." },
+              { step: "02", title: "Approvals & Registration", description: "MNRE/TNEB registration and e-token processing for subsidy eligibility." },
+              { step: "03", title: "Delivery & Installation", description: "Material delivery and professional installation — typically completed within 3–5 days." },
+              { step: "04", title: "Commissioning & Subsidy", description: "We submit commissioning documents and apply for subsidy; funds (up to ₹78,000) are released to your bank account." }
             ].map((item, index) => (
               <motion.div
                 key={index}
