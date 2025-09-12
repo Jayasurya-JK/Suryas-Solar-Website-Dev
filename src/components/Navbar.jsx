@@ -51,7 +51,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16 md:h-16 sm:h-14">
           <Link to="/" className="flex items-center space-x-3">
             <img src="/assets/suryas-logo.jpg" alt="Suryas Solar" className="h-10 w-10 object-cover rounded-full border-2 border-white shadow-md" />
-            <span className="text-xl font-bold text-[#C1509C] hidden sm:block" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>Suryas Solar</span>
+            <span className="text-xl font-bold text-[#C1509C] block" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>Suryas Solar</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -64,7 +64,7 @@ const Navbar = () => {
                     ? 'text-[#F39C12]'
                     : isScrolled
                     ? 'text-[#1B2631] hover:text-[#C1509C]'
-                    : 'text-[#F8F9F9] hover:text-[#F39C12]'
+                    : 'text-[#1B2631] hover:text-[#F39C12]'
                 }`}
               >
                 {item.name}
@@ -99,7 +99,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-[#F8F9F9] rounded-lg shadow-lg mt-2 p-4"
+            className="md:hidden bg-white rounded-lg shadow-lg mt-4 mb-8 p-4"
           >
             {navItems.map((item) => (
               <Link
@@ -109,14 +109,14 @@ const Navbar = () => {
                 className={`block py-2 px-4 rounded-md font-medium transition-colors ${
                   location.pathname === item.path
                     ? 'text-[#F39C12] bg-[#F39C12]/10'
-                    : 'text-[#1B2631] hover:text-[#C1509C] hover:bg-[#27AE60]/10'
+                    : 'text-[#1B2631] hover:text-[#1B2631] hover:bg-gray-100'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
             <div className="mt-4 pt-4 border-t border-gray-200">
-              <a href="tel:+919876543210" className="flex items-center space-x-2 text-[#27AE60] mb-3">
+              <a href="tel:+919876543210" className="flex items-center space-x-2 text-[#1B2631] mb-3">
                 <Phone className="w-4 h-4" />
                 <span>+91 98765 43210</span>
               </a>
