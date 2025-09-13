@@ -139,7 +139,6 @@ const Home = () => {
           </motion.div>
         </div>
 
-        <div className="hero-overlay absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#F8F9F9] to-transparent pointer-events-none"></div>
       </section>
 
       <section className="section-padding bg-[#F8F9F9]">
