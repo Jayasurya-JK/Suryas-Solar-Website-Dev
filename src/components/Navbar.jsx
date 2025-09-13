@@ -51,7 +51,10 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16 md:h-16 sm:h-14">
           <Link to="/" className="flex items-center space-x-3">
             <img src="/assets/suryas-logo.jpg" alt="Suryas Solar" className="h-10 w-10 object-cover rounded-full border-2 border-white shadow-md" />
-            <span className="text-xl font-bold text-[#C1509C] block" style={{fontFamily: 'Inter, system-ui, sans-serif'}}>Suryas Solar</span>
+            <div className="block">
+              <span className="text-xl font-black text-[#C1509C] uppercase tracking-wide" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '900'}}>SURYAS</span>
+              <span className="text-xl font-black text-[#C1509C] uppercase tracking-wide block" style={{fontFamily: 'Inter, system-ui, sans-serif', fontWeight: '900'}}>SOLAR</span>
+            </div>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
