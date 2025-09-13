@@ -1,9 +1,9 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
-import { ArrowRight, Star, Users, Zap, Shield, Award } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
+import React from "react";
+import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
+import { ArrowRight, Star, Users, Zap, Shield, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 
 const Home = () => {
   const { toast } = useToast();
@@ -11,22 +11,45 @@ const Home = () => {
   const handleQuoteClick = () => {
     toast({
       title: "🚧 Quote Request",
-      description: "This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
+      description:
+        "This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
     });
   };
 
   const handleLearnMore = () => {
     toast({
       title: "🚧 Learn More",
-      description: "This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
+      description:
+        "This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
     });
   };
 
   const benefits = [
-    { icon: Zap, title: "Reduce Energy Bills", description: "Save up to 90% on electricity costs" },
-    { icon: Shield, title: "25-Year Warranty", description: "Long-term protection and peace of mind" },
-    { icon: Users, title: "Expert Installation", description: "Certified professionals with 10+ years experience" },
-    { icon: Award, title: "Government Subsidies", description: (<>Upto <strong style={{color:'#27AE60'}}>₹78,000</strong> subsidy under PM surya Ghar.</>) }
+    {
+      icon: Zap,
+      title: "Reduce Energy Bills",
+      description: "Save up to 90% on electricity costs",
+    },
+    {
+      icon: Shield,
+      title: "Official Tata Dealer",
+      description: "Authorized Tata Power Solar dealer",
+    },
+    {
+      icon: Users,
+      title: "Expert Installation",
+      description: "Certified professionals with 10+ years experience",
+    },
+    {
+      icon: Award,
+      title: "Government Subsidies",
+      description: (
+        <>
+          Upto <strong style={{ color: "#27AE60" }}>₹78,000</strong> subsidy
+          under PM surya Ghar.
+        </>
+      ),
+    },
   ];
 
   const testimonials = [
@@ -34,32 +57,37 @@ const Home = () => {
       name: "Rajesh Kumar",
       location: "Mumbai",
       rating: 5,
-      text: "Excellent service! Our electricity bill reduced by 85%. Highly recommend Suryas Solar."
+      text: "Excellent service! Our electricity bill reduced by 85%. Highly recommend Suryas Solar.",
     },
     {
       name: "Priya Sharma",
       location: "Delhi",
       rating: 5,
-      text: "Professional installation and great customer support. Very satisfied with the solar system."
+      text: "Professional installation and great customer support. Very satisfied with the solar system.",
     },
     {
       name: "Amit Patel",
       location: "Bangalore",
       rating: 5,
-      text: "Best investment we made for our home. Clean energy and significant savings every month."
-    }
+      text: "Best investment we made for our home. Clean energy and significant savings every month.",
+    },
   ];
 
   return (
     <>
       <Helmet>
-        <title>Suryas Solar - Leading Rooftop Solar Installation Provider in India</title>
-        <meta name="description" content="Transform your home with sustainable solar energy. Expert rooftop solar installation, maintenance, and consultation services across India. Get your free quote today!" />
+        <title>
+          Suryas Solar - Leading Rooftop Solar Installation Provider in India
+        </title>
+        <meta
+          name="description"
+          content="Transform your home with sustainable solar energy. Expert rooftop solar installation, maintenance, and consultation services across India. Get your free quote today!"
+        />
       </Helmet>
 
-      <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1B2631]">
+      <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1B2631] pt-20">
         <div className="absolute inset-0 solar-pattern opacity-5"></div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-[#F8F9F9]">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -71,18 +99,25 @@ const Home = () => {
               Power Your House with
               <span className="block text-[#F39C12]">Clean Solar Energy</span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300">
-              Tamilnadu's trusted solar installation partner. Reduce your electricity bills by up to 90% 
-              with our premium rooftop solar solutions.
+              Tamilnadu's trusted solar installation partner. Reduce your
+              electricity bills by up to 90% with our premium rooftop solar
+              solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button onClick={handleQuoteClick} className="btn-primary text-lg px-8 py-4">
+              <Button
+                onClick={handleQuoteClick}
+                className="btn-primary text-lg px-8 py-4"
+              >
                 Get Free Quote Today
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button onClick={handleLearnMore} className="btn-secondary text-lg px-8 py-4 bg-transparent border-2 border-[#F39C12] text-[#F39C12] hover:bg-[#F39C12] hover:text-[#1B2631]">
+              <Button
+                onClick={handleLearnMore}
+                className="btn-secondary text-lg px-8 py-4 bg-transparent border-2 border-[#F39C12] text-[#F39C12] hover:bg-[#F39C12] hover:text-[#1B2631]"
+              >
                 Learn More
               </Button>
             </div>
@@ -116,11 +151,13 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-[#1B2631] mb-4">
-              Why Choose Solar Energy?
+              Why Choose Solar with{" "}
+              <span className="text-[#27AE60]">Surya's Solar?</span>
             </h2>
-             <div className="section-divider"></div>
+            <div className="section-divider"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join thousands of satisfied customers who have made the smart switch to solar energy.
+              Trusted solar partner delivering cost-effective, sustainable
+              energy solutions in Tamil Nadu.
             </p>
           </motion.div>
 
@@ -136,8 +173,14 @@ const Home = () => {
                 <div className="w-16 h-16 bg-[#27AE60] rounded-full flex items-center justify-center mx-auto mb-4">
                   <benefit.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#1B2631] mb-2">{benefit.title}</h3>
-                <p className="text-gray-600">{typeof benefit.description === 'string' ? benefit.description : benefit.description}</p>
+                <h3 className="text-xl font-semibold text-[#1B2631] mb-2">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600">
+                  {typeof benefit.description === "string"
+                    ? benefit.description
+                    : benefit.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -160,10 +203,30 @@ const Home = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { step: "01", title: "Site Feasibility", description: "We assess roof condition, orientation and energy needs to design the right system." },
-              { step: "02", title: "Approvals & Registration", description: "MNRE/TNEB registration and e-token processing for subsidy eligibility." },
-              { step: "03", title: "Delivery & Installation", description: "Material delivery and professional installation — typically completed within 3–5 days." },
-              { step: "04", title: "Commissioning & Subsidy", description: "We submit commissioning documents and apply for subsidy; funds (up to ₹78,000) are released to your bank account." }
+              {
+                step: "01",
+                title: "Site Feasibility",
+                description:
+                  "We assess roof condition, orientation and energy needs to design the right system.",
+              },
+              {
+                step: "02",
+                title: "Approvals & Registration",
+                description:
+                  "MNRE/TNEB registration and e-token processing for subsidy eligibility.",
+              },
+              {
+                step: "03",
+                title: "Delivery & Installation",
+                description:
+                  "Material delivery and professional installation — typically completed within 3–5 days.",
+              },
+              {
+                step: "04",
+                title: "Commissioning & Subsidy",
+                description:
+                  "We submit commissioning documents and apply for subsidy; funds (up to ₹78,000) are released to your bank account.",
+              },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -172,10 +235,17 @@ const Home = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-[#F8F9F9] p-6 rounded-xl shadow-soft text-center"
               >
-                <div className="w-16 h-16 flex items-center justify-center mx-auto mb-6 rounded-full text-white text-2xl font-bold shadow-md" style={{ background: 'linear-gradient(135deg, #27AE60, #3498DB)' }}>
+                <div
+                  className="w-16 h-16 flex items-center justify-center mx-auto mb-6 rounded-full text-white text-2xl font-bold shadow-md"
+                  style={{
+                    background: "linear-gradient(135deg, #27AE60, #3498DB)",
+                  }}
+                >
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold text-[#1B2631] mb-2">{item.title}</h3>
+                <h3 className="text-xl font-bold text-[#1B2631] mb-2">
+                  {item.title}
+                </h3>
                 <p className="text-[#4B5A60]">{item.description}</p>
               </motion.div>
             ))}
@@ -211,13 +281,22 @@ const Home = () => {
               >
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-[#F39C12] fill-current" />
+                    <Star
+                      key={i}
+                      className="w-5 h-5 text-[#F39C12] fill-current"
+                    />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
+                <p className="text-gray-600 mb-4 italic">
+                  "{testimonial.text}"
+                </p>
                 <div>
-                  <div className="font-semibold text-[#1B2631]">{testimonial.name}</div>
-                  <div className="text-sm text-gray-500">{testimonial.location}</div>
+                  <div className="font-semibold text-[#1B2631]">
+                    {testimonial.name}
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    {testimonial.location}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -237,11 +316,14 @@ const Home = () => {
               Ready to Start Saving with Solar?
             </h2>
             <p className="text-xl max-w-3xl mx-auto text-gray-200">
-              Get a free consultation and personalized quote for your home. 
+              Get a free consultation and personalized quote for your home.
               Start your journey to energy independence today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button onClick={handleQuoteClick} className="btn-primary text-lg px-8 py-4">
+              <Button
+                onClick={handleQuoteClick}
+                className="btn-primary text-lg px-8 py-4"
+              >
                 Get Your Free Quote
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>

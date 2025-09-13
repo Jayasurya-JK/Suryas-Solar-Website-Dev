@@ -73,9 +73,9 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-             <a href="tel:+919876543210" className={`flex items-center space-x-1 transition-colors ${ isScrolled ? 'text-[#27AE60] hover:text-[#1B2631]' : 'text-[#F8F9F9] hover:text-[#F39C12]' }`}>
+             <a href="tel:+917904369094" className={`flex items-center space-x-1 transition-colors ${ isScrolled ? 'text-[#27AE60] hover:text-[#1B2631]' : 'text-[#1B2631] hover:text-[#F39C12]' }`}>
               <Phone className="w-4 h-4" />
-              <span className="font-medium">+91 98765 43210</span>
+              <span className="font-medium">79043 69094</span>
             </a>
             <Button onClick={handleQuoteClick} className="btn-primary">
               Get Free Quote
@@ -86,7 +86,7 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-md ${
-                isScrolled ? 'text-[#1B2631]' : 'text-[#F8F9F9]'
+                isScrolled ? 'text-[#1B2631]' : 'text-[#1B2631]'
               }`}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -116,9 +116,9 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="mt-4 pt-4 border-t border-gray-200">
-              <a href="tel:+919876543210" className="flex items-center space-x-2 text-[#1B2631] mb-3">
+              <a href="tel:+917904369094" className="flex items-center space-x-2 text-[#1B2631] mb-3">
                 <Phone className="w-4 h-4" />
-                <span>+91 98765 43210</span>
+                <span>79043 69094</span>
               </a>
               <Button onClick={handleQuoteClick} className="w-full btn-primary">
                 Get Free Quote
